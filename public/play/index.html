@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleships | Playing</title>
+    <link rel="stylesheet" href="./play.css">
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.2/qs.min.js"></script>
+    <script defer src="./playLITE.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="content">
+        <div class="contentLeft">
+            <div class="leftTop top">
+                <h1 class="status" id="statusLeft">STATUS</h1>
+            </div>
+            <div class="leftMiddle middle">
+                <div class="boardContainer">
+                    <div class="board" id="leftBoard">
+                        <div class="boardTile" id="00"></div>
+                        <div class="boardTile" id="01"></div>
+                        <div class="boardTile" id="02"></div>
+                        <div class="boardTile" id="03"></div>
+                        <div class="boardTile" id="04"></div>
+                        <div class="boardTile" id="05"></div>
+                        <div class="boardTile" id="06"></div>
+                        <div class="boardTile" id="07"></div>
+                        <div class="boardTile" id="08"></div>
+                        <div class="boardTile" id="09"></div>
+                        <div class="boardTile" id="10"></div>
+                        <div class="boardTile" id="11"></div>
+                        <div class="boardTile" id="12"></div>
+                        <div class="boardTile" id="13"></div>
+                        <div class="boardTile" id="14"></div>
+                        <div class="boardTile" id="15"></div>
+                        <div class="boardTile" id="16"></div>
+                        <div class="boardTile" id="17"></div>
+                        <div class="boardTile" id="18"></div>
+                        <div class="boardTile" id="19"></div>
+                        <div class="boardTile" id="20"></div>
+                        <div class="boardTile" id="21"></div>
+                        <div class="boardTile" id="22"></div>
+                        <div class="boardTile" id="23"></div>
+                        <div class="boardTile" id="24"></div>
+                        <div class="boardTile" id="25"></div>
+                        <div class="boardTile" id="26"></div>
+                        <div class="boardTile" id="27"></div>
+                        <div class="boardTile" id="28"></div>
+                        <div class="boardTile" id="29"></div>
+                        <div class="boardTile" id="30"></div>
+                        <div class="boardTile" id="31"></div>
+                        <div class="boardTile" id="32"></div>
+                        <div class="boardTile" id="33"></div>
+                        <div class="boardTile" id="34"></div>
+                        <div class="boardTile" id="35"></div>
+                        <div class="boardTile" id="36"></div>
+                        <div class="boardTile" id="37"></div>
+                        <div class="boardTile" id="38"></div>
+                        <div class="boardTile" id="39"></div>
+                        <div class="boardTile" id="40"></div>
+                        <div class="boardTile" id="41"></div>
+                        <div class="boardTile" id="42"></div>
+                        <div class="boardTile" id="43"></div>
+                        <div class="boardTile" id="44"></div>
+                        <div class="boardTile" id="45"></div>
+                        <div class="boardTile" id="46"></div>
+                        <div class="boardTile" id="47"></div>
+                        <div class="boardTile" id="48"></div>
+                        <div class="boardTile" id="49"></div>
+                        <div class="boardTile" id="50"></div>
+                        <div class="boardTile" id="51"></div>
+                        <div class="boardTile" id="52"></div>
+                        <div class="boardTile" id="53"></div>
+                        <div class="boardTile" id="54"></div>
+                        <div class="boardTile" id="55"></div>
+                        <div class="boardTile" id="56"></div>
+                        <div class="boardTile" id="57"></div>
+                        <div class="boardTile" id="58"></div>
+                        <div class="boardTile" id="59"></div>
+                        <div class="boardTile" id="60"></div>
+                        <div class="boardTile" id="61"></div>
+                        <div class="boardTile" id="62"></div>
+                        <div class="boardTile" id="63"></div>
+                        <div class="boardTile" id="64"></div>
+                        <div class="boardTile" id="65"></div>
+                        <div class="boardTile" id="66"></div>
+                        <div class="boardTile" id="67"></div>
+                        <div class="boardTile" id="68"></div>
+                        <div class="boardTile" id="69"></div>
+                        <div class="boardTile" id="70"></div>
+                        <div class="boardTile" id="71"></div>
+                        <div class="boardTile" id="72"></div>
+                        <div class="boardTile" id="73"></div>
+                        <div class="boardTile" id="74"></div>
+                        <div class="boardTile" id="75"></div>
+                        <div class="boardTile" id="76"></div>
+                        <div class="boardTile" id="77"></div>
+                        <div class="boardTile" id="78"></div>
+                        <div class="boardTile" id="79"></div>
+                        <div class="boardTile" id="80"></div>
+                        <div class="boardTile" id="81"></div>
+                        <div class="boardTile" id="82"></div>
+                        <div class="boardTile" id="83"></div>
+                        <div class="boardTile" id="84"></div>
+                        <div class="boardTile" id="85"></div>
+                        <div class="boardTile" id="86"></div>
+                        <div class="boardTile" id="87"></div>
+                        <div class="boardTile" id="88"></div>
+                        <div class="boardTile" id="89"></div>
+                        <div class="boardTile" id="90"></div>
+                        <div class="boardTile" id="91"></div>
+                        <div class="boardTile" id="92"></div>
+                        <div class="boardTile" id="93"></div>
+                        <div class="boardTile" id="94"></div>
+                        <div class="boardTile" id="95"></div>
+                        <div class="boardTile" id="96"></div>
+                        <div class="boardTile" id="97"></div>
+                        <div class="boardTile" id="98"></div>
+                        <div class="boardTile" id="99"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="leftBottom bottom">
+                <h1 id="currentTileLeft"></h1>
+            </div>
+        </div>
+        <div class="contentChat">
+            <div class="chatContainer">
+                <div class="chat" id="chat">
+                </div>
+                <div class="chatFormContainer">
+                    <form class="chatForm" id="chatForm">
+                        <input class="chatFormInput" required type="text" name="message" id="message" autocomplete="off" placeholder="Enter Message">
+                        <button class="chatFormButton">Send</button>
+                    </form>
+                </div>
+                <div class="chatBottomContainer">
+                    <button onclick="randomNumber()" class="chatButton"><span class="material-symbols-outlined">casino</span></button>
+                    <button onclick="opponentWon()">Opponent Won</button>
+                </div>
+            </div>
+        </div>
+        <div class="contentRight">
+            <div class="rightTop top">
+                <h1 class="status" id="statusRight">STATUS</h1>
+            </div>
+            <div class="rightMiddle middle">
+                <div class="boardContainer">
+                    <div class="board" id="rightBoard">
+                        <div class="boardTile" id="00r"></div>
+                        <div class="boardTile" id="01r"></div>
+                        <div class="boardTile" id="02r"></div>
+                        <div class="boardTile" id="03r"></div>
+                        <div class="boardTile" id="04r"></div>
+                        <div class="boardTile" id="05r"></div>
+                        <div class="boardTile" id="06r"></div>
+                        <div class="boardTile" id="07r"></div>
+                        <div class="boardTile" id="08r"></div>
+                        <div class="boardTile" id="09r"></div>
+                        <div class="boardTile" id="10r"></div>
+                        <div class="boardTile" id="11r"></div>
+                        <div class="boardTile" id="12r"></div>
+                        <div class="boardTile" id="13r"></div>
+                        <div class="boardTile" id="14r"></div>
+                        <div class="boardTile" id="15r"></div>
+                        <div class="boardTile" id="16r"></div>
+                        <div class="boardTile" id="17r"></div>
+                        <div class="boardTile" id="18r"></div>
+                        <div class="boardTile" id="19r"></div>
+                        <div class="boardTile" id="20r"></div>
+                        <div class="boardTile" id="21r"></div>
+                        <div class="boardTile" id="22r"></div>
+                        <div class="boardTile" id="23r"></div>
+                        <div class="boardTile" id="24r"></div>
+                        <div class="boardTile" id="25r"></div>
+                        <div class="boardTile" id="26r"></div>
+                        <div class="boardTile" id="27r"></div>
+                        <div class="boardTile" id="28r"></div>
+                        <div class="boardTile" id="29r"></div>
+                        <div class="boardTile" id="30r"></div>
+                        <div class="boardTile" id="31r"></div>
+                        <div class="boardTile" id="32r"></div>
+                        <div class="boardTile" id="33r"></div>
+                        <div class="boardTile" id="34r"></div>
+                        <div class="boardTile" id="35r"></div>
+                        <div class="boardTile" id="36r"></div>
+                        <div class="boardTile" id="37r"></div>
+                        <div class="boardTile" id="38r"></div>
+                        <div class="boardTile" id="39r"></div>
+                        <div class="boardTile" id="40r"></div>
+                        <div class="boardTile" id="41r"></div>
+                        <div class="boardTile" id="42r"></div>
+                        <div class="boardTile" id="43r"></div>
+                        <div class="boardTile" id="44r"></div>
+                        <div class="boardTile" id="45r"></div>
+                        <div class="boardTile" id="46r"></div>
+                        <div class="boardTile" id="47r"></div>
+                        <div class="boardTile" id="48r"></div>
+                        <div class="boardTile" id="49r"></div>
+                        <div class="boardTile" id="50r"></div>
+                        <div class="boardTile" id="51r"></div>
+                        <div class="boardTile" id="52r"></div>
+                        <div class="boardTile" id="53r"></div>
+                        <div class="boardTile" id="54r"></div>
+                        <div class="boardTile" id="55r"></div>
+                        <div class="boardTile" id="56r"></div>
+                        <div class="boardTile" id="57r"></div>
+                        <div class="boardTile" id="58r"></div>
+                        <div class="boardTile" id="59r"></div>
+                        <div class="boardTile" id="60r"></div>
+                        <div class="boardTile" id="61r"></div>
+                        <div class="boardTile" id="62r"></div>
+                        <div class="boardTile" id="63r"></div>
+                        <div class="boardTile" id="64r"></div>
+                        <div class="boardTile" id="65r"></div>
+                        <div class="boardTile" id="66r"></div>
+                        <div class="boardTile" id="67r"></div>
+                        <div class="boardTile" id="68r"></div>
+                        <div class="boardTile" id="69r"></div>
+                        <div class="boardTile" id="70r"></div>
+                        <div class="boardTile" id="71r"></div>
+                        <div class="boardTile" id="72r"></div>
+                        <div class="boardTile" id="73r"></div>
+                        <div class="boardTile" id="74r"></div>
+                        <div class="boardTile" id="75r"></div>
+                        <div class="boardTile" id="76r"></div>
+                        <div class="boardTile" id="77r"></div>
+                        <div class="boardTile" id="78r"></div>
+                        <div class="boardTile" id="79r"></div>
+                        <div class="boardTile" id="80r"></div>
+                        <div class="boardTile" id="81r"></div>
+                        <div class="boardTile" id="82r"></div>
+                        <div class="boardTile" id="83r"></div>
+                        <div class="boardTile" id="84r"></div>
+                        <div class="boardTile" id="85r"></div>
+                        <div class="boardTile" id="86r"></div>
+                        <div class="boardTile" id="87r"></div>
+                        <div class="boardTile" id="88r"></div>
+                        <div class="boardTile" id="89r"></div>
+                        <div class="boardTile" id="90r"></div>
+                        <div class="boardTile" id="91r"></div>
+                        <div class="boardTile" id="92r"></div>
+                        <div class="boardTile" id="93r"></div>
+                        <div class="boardTile" id="94r"></div>
+                        <div class="boardTile" id="95r"></div>
+                        <div class="boardTile" id="96r"></div>
+                        <div class="boardTile" id="97r"></div>
+                        <div class="boardTile" id="98r"></div>
+                        <div class="boardTile" id="99r"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightBottom bottom">
+                <h1 id="currentTileRight"></h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

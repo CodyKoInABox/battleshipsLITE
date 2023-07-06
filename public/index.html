@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleships | Menu</title>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="./menu.js"></script>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <h1>Battleships</h1>
+    <br>
+
+    <form action="./play">
+        <h3>Username:</h3> <input required type="text" name="username" id="username" autocomplete="off" placeholder="Username...">
+        <br>
+        <h3>Room:</h3> <input required type="text" name="room" id="room" autocomplete="off" placeholder="Room name...">
+        <br><br><br>
+        <button>Create/Join room</button>
+    </form>
+</body>
+</html>
